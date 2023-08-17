@@ -1,0 +1,14 @@
+<div style="position: relative;">
+  <button mat-icon-button [mat-dialog-close]="data.animal" style="float: right;">
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
+
+<mat-dialog-content style="margin-top: 38px;">
+  <div style="width: auto;">
+    <img [src]="albumInfo?.url" width="250" height="250">
+  </div>
+  <div style="width: auto;">
+    <h1 style="white-space: initial;">{{albumInfo?.title}}</h1>
+  </div>
+</mat-dialog-content>

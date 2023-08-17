@@ -1,0 +1,37 @@
+<mat-tab-group>
+
+  <mat-tab label="Users">
+    <div style="margin-top: 36px;">
+      <mat-form-field class="example-full-width" style="width: 100%;">
+        <mat-label>Buscar</mat-label>
+        <input matInput placeholder="Ex. 123 or Bet" value="" [formControl]="searchUser">
+      </mat-form-field>
+    </div>
+    
+    <mat-list role="list" *ngFor="let item of listUsers">
+      <mat-list-item class="item" role="listitem">{{item.name}}  
+        <button mat-raised-button color="primary" style="float: right;width: 38px;text-align: center;" [routerLink]="['/users/', item?.id]">
+          <mat-icon>remove_red_eye</mat-icon>
+        </button>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+    </mat-list>
+  </mat-tab>
+
+  <mat-tab label="Photos">   
+    <mat-list role="list" *ngFor="let item of listPhotos">
+      <mat-list-item class="item" role="listitem" style="height: auto;" (click)="openModalPhotos(item?.id)">
+        <div style="display: flex;">
+          <div style="width: 40%;height: auto;">
+            <img [src]="item?.thumbnailUrl" width="80" height="80">
+          </div>
+          <div style="width: 60%;">
+            <h3 style="white-space: initial;">{{item?.title}}</h3>
+          </div>
+        </div>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+    </mat-list>
+  </mat-tab>
+
+</mat-tab-group>

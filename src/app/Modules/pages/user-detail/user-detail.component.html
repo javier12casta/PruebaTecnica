@@ -1,0 +1,47 @@
+<button mat-icon-button color="primary" [routerLink]="['/users']" style="margin-bottom: 38px;">
+  <mat-icon>keyboard_backspace</mat-icon>
+</button>
+
+<div style="display: grid; flex-direction: column; margin-left: 20px;">
+  <div>
+    <h1><b>User Info</b></h1>
+  </div>
+  <mat-divider style="margin-bottom: 38px;"></mat-divider>
+  <div>
+    <h4 class="text-center"><b>Name: </b>  {{ userInfo?.name }}</h4>
+  </div>
+  <div>
+    <h4 class="text-center"><b>UserName: </b> {{ userInfo?.username }}</h4>
+  </div>
+  <div>
+    <h4 class="text-center"><b>Email: </b> {{ userInfo?.email }}</h4>
+  </div>
+  <div>
+    <h4 class="text-center"><b>Phone: </b> {{ userInfo?.phone }}</h4>
+  </div>
+  <div>
+    <h4 class="text-center"><b>Website: </b> {{ userInfo?.website }}</h4>
+  </div>
+  <div>
+    <h4 class="text-center"><b>Company: </b> {{ userInfo?.company?.name }}</h4>
+  </div>
+</div>
+
+<div style="margin-top: 38px; ">
+  <mat-list role="list" *ngFor="let item of listPosts">
+    <mat-list-item class="item" role="listitem" style="height: auto;">
+      <div>
+        <h2 style="white-space: initial;">{{item?.title}}</h2>
+      </div>
+      <div>
+        <h4 style="white-space: initial;">{{item?.body}}</h4>
+      </div>
+      <div>
+        <button mat-raised-button color="primary" style="float: right;width: 38px;text-align: center; margin-bottom: 20px;" (click)="openModal(item?.userId)">
+          <mat-icon>comment</mat-icon>
+        </button>
+      </div>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+  </mat-list>
+</div>

@@ -1,0 +1,22 @@
+<div style="position: relative;">
+  <button mat-icon-button [mat-dialog-close]="data.animal" style="float: right;">
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
+
+<mat-dialog-content>
+  <mat-list role="list" *ngFor="let item of listComments">
+    <mat-list-item class="item" role="listitem" style="height: auto;">
+      <div>
+        <h2 style="white-space: initial;">{{item?.email}}</h2>
+      </div>
+      <div>
+        <h4 style="white-space: initial;">{{item?.name}}</h4>
+      </div>
+      <div>
+        <h4 style="white-space: initial;">{{item?.body}}</h4>
+      </div>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+  </mat-list>
+</mat-dialog-content>
